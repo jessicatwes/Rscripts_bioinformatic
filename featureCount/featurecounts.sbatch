@@ -1,20 +1,24 @@
 #!/bin/bash
-#SBATCH --job-name=<job_name>				 # Job name
+#SBATCH --job-name=featurecounts			 # Job name
 #SBATCH --mail-type=FAIL,END				 # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=<email>				 # Where to send mail
+#SBATCH --mail-user=jewe1055@colorado.edu		 # Where to send mail
 #SBATCH --nodes=1					 # Number of cores job will run on
-#SBATCH --ntasks=1					 # Number of CPU (processers, tasks)
-#SBATCH --time=01:00:00					 # Time limit hrs:min:sec
+#SBATCH --ntasks=8					 # Number of CPU (processers, tasks)
+#SBATCH --time=8:00:00					 # Time limit hrs:min:sec
+#SBATCH --partition short				 # Job queue
 #SBATCH --mem=4gb					 # Memory limit
-#SBATCH --output=/path/to/stderr_stdout/folder/%x_%j.out
-#SBATCH --error=/path/to/stderr_stdout/folder/%x_%j.err
+#SBATCH --output=/scratch/Users/jewe1055/exp_files/exp99/eofiles/%x_%j.out
+#SBATCH --error=/scratch/Users/jewe1055/exp_files/exp99/eofiles/%x_%j.err
 
 ################### SET VARIABLES ######################################
-METADATA=metadata.R
-FEATURECOUNTS=featurecounts.R
+INDIR='/scratch/Users/jewe1055/exp_files/exp99/scripts'
+METADATA=${INDIR}/metadata.R
+FEATURECOUNTS=${INDIR}/featurecounts.R
 
 ################## PRINT JOB INFO ######################################
 
+#printf "Sample ID: $ROOTNAME"
+#printf "\nDirectory: $PROJECT"
 printf "\nRun on: $(hostname)"
 printf "\nRun from: $(pwd)"
 printf "\nScript: $0\n"
