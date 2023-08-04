@@ -1,2 +1,2 @@
 # Rscripts for bioinformatics
-This repo contains a multitude of R scripts developed at CU Boulder during my PhD work. The scripts are mainly written to work with different next-generation sequencing data.
+This github repository holds a multitude of R scripts developed during my PhD work at the University of Colorado Boulder in the DnA Labs (Dowell and Allen). The scripts were mainly written to work with different next-generation sequencing data.
